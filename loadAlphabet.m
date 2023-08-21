@@ -1,0 +1,19 @@
+%% Load alphabet
+function [modAlphabet, mOder, Emax] = loadAlphabet(modScheme)
+switch (modScheme)
+    case 'QPSK'
+        modAlphabet = ...
+            [ -1-1i,-1+1i, ...
+            +1-1i,+1+1i ];
+        mOder = 4;  % Modulation oder
+        Emax = 2;
+    case '16QAM'
+        modAlphabet = ...
+            [ -3-3i,-3-1i,-3+3i,-3+1i, ...
+            -1-3i,-1-1i,-1+3i,-1+1i, ...
+            +3-3i,+3-1i,+3+3i,+3+1i, ...
+            +1-3i,+1-1i,+1+3i,+1+1i ];
+        mOder = 16;  % Modulation oder
+        Emax = 10;
+end
+end %% end of function
